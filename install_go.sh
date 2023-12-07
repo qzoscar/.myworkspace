@@ -29,10 +29,6 @@ function get_os() {
     echo $(uname -s | awk '{print tolower($0)}')
 }
 
-function get_latest_relase() {
-
-}
-
 main() {
     local release="1.5.2"
     local os=$(get_os)
