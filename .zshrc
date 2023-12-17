@@ -104,6 +104,8 @@ if [ -f "${HOME}/.g/env" ]; then
     . "${HOME}/.g/env"
 fi
 
+export PATH="${HOME}/go/bin:$PATH"
+
 # autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
