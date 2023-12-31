@@ -106,6 +106,8 @@ fi
 
 export PATH="${HOME}/go/bin:$PATH"
 
+export PATH="$(go env GOPATH)/bin:$PATH"
+
 # autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
