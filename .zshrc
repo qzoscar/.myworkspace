@@ -105,7 +105,7 @@ if [ -f "${HOME}/.g/env" ]; then
 fi
 
 export PATH="${HOME}/go/bin:$PATH"
-
+export PATH="$PATH:$HOME/.local/bin" # protobuf
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # autojump
@@ -113,6 +113,7 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 
 # alias
 alias ksc="kubectl switch-config"
