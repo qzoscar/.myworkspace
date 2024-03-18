@@ -117,3 +117,13 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # alias
 alias ksc="kubectl switch-config"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+fi
+unset __conda_setup
+# <<< conda initialize <<<

@@ -67,3 +67,10 @@ brew install kubectl
 
 3. install switch-config plugin
 
+
+## Python
+1. anaconda config
+make a soft link
+```
+sudo ln -s /usr/bin/conda path/to/anaconda/bin/conda
+```
