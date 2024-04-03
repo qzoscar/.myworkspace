@@ -72,5 +72,5 @@ brew install kubectl
 1. anaconda config
 make a soft link
 ```
-sudo ln -s /usr/bin/conda path/to/anaconda/bin/conda
+sudo ln -s ${HOME}/anaconda3/bin/conda /usr/bin/conda
 ```
