@@ -100,34 +100,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # g shell setup
-if [ -f "${HOME}/.g/env" ]; then
-    . "${HOME}/.g/env"
+
+
+source .module/init.sh
+
+# 把主机自己的alias放到这里
+if [ -f .alias/alias.sh ]; then
+  source .alias/alias.sh
 fi
 
-export PATH="${HOME}/go/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin" # protobuf
-export PATH="$(go env GOPATH)/bin:$PATH"
-
-# autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-# krew
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
-# alias
-alias ksc="kubectl switch-config"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
