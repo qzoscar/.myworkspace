@@ -102,12 +102,25 @@ source $ZSH/oh-my-zsh.sh
 # g shell setup
 
 
+# 获取当前 shell 的配置文件（.zshrc）的真实路径
+ZSHRC_REAL_PATH=$(readlink -f "${ZDOTDIR:-$HOME}/.zshrc")
+
+# 获取该路径的目录部分
+ZSHRC_DIR=$(dirname $ZSHRC_REAL_PATH)
+
+# 保存当前目录
+pushd . > /dev/null
+
+# 改变到脚本目录
+cd $ZSHRC_DIR
+
+# 执行命令
 source .module/init.sh
 
-# 把主机自己的alias放到这里
 if [ -f .alias/alias.sh ]; then
   source .alias/alias.sh
 fi
 
-
+# 返回之前的目录
+popd > /dev/null
 
